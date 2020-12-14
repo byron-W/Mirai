@@ -7,3 +7,5 @@ I'm too lazy to advertise it
 If you have any questions contact me on discord @Godly_Otaku#6676
 
 Thanks for checkin this out
+
+Update 12/13/20: im working on downloading all songs for song guessing into deployed server. May or may not be done by 2021. Depends if I'm lazy or not. Also might fix purge bug
