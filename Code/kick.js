@@ -25,8 +25,7 @@ module.exports = {
                 .setColor(red)
             return msg.channel.send(kickEmbed);
         }).catch(err => {
-            console.error(err);
-            return msg.channel.send("I don't have the permissions to kick them");
+            return catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to kick them");
         });
     },
 }

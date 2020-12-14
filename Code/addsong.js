@@ -8,7 +8,7 @@ module.exports = {
     cooldown: 5,
     class: 'devcmd',
     args: true,
-    execute(msg, args, con, linkargs) {
+    execute(msg, args, con, linkargs, client, catchErr) {
         try {
             let table = linkargs[0].toLowerCase();
             let songlink = JSON.stringify(linkargs[1]);
@@ -17,14 +17,12 @@ module.exports = {
             let ansname = songname.toLowerCase();
             let ansaltname = altname.toLowerCase();
             con.query(`SELECT * FROM ${table}`, (err, rows) => {
-                if (err) return msg.channel.send(`Error occured in query for ${table}`)
+                if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev");
                 let rank = rows.length + 1;
                 con.query(`INSERT INTO ${table} (songlink, songname, altname, songid, ansname, ansaltname) VALUES(${songlink}, ${songname}, ${altname}, ${rank}, ${ansname}, ${ansaltname})`, (err, rows) => {
-                    if (err) {
-                        console.log(err)
-                        return msg.channel.send("Error occured")
-                    }
+                    if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
                     con.query(`SELECT * FROM ${table} WHERE songid = ${rank}`, (err, rows) => {
+                        if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
                         let infoembed = new Discord.MessageEmbed()
                             .setTitle(`New info for row #${rows[0].songid}`)
                             .addField("Songname:", rows[0].songname)
@@ -36,8 +34,8 @@ module.exports = {
                 })
                 numofsongs = rank;
             });
-        } catch {
-            return msg.channel.send(`Remember the format\n${prefix}addsong <table> | <end of youtube link> | <name> | <altname>`)
+        } catch (err) {
+              return catchErr(err, msg, `${module.exports.name}.js`, `Remember the format\n${prefix}addsong <table> | <end of youtube link> | <name> | <altname>`)
         }
     },
 }

@@ -8,7 +8,7 @@ module.exports = {
     cooldown: 5,
     class: 'fun',
     args: false,
-    execute(msg, args, con, linkargs, client) {
+    execute(msg, args, con, linkargs, client, catchErr) {
         let user = msg.mentions.members.first();
         let botmen = msg.mentions.has(client.user);
         if ((user) && (!botmen)) {
@@ -24,19 +24,17 @@ module.exports = {
         try {
             client.voice.joinChannel(VoiceChannel)     //Joins the voice chat
                 .then(connection => {
-                    const stream = ytdl("https://www.youtube.com/watch?v=4U7_Sfqwdl8", { filter: 'audioonly', quality: 'highestaudio' });
+                    const stream = ytdl("https://www.youtube.com/watch?v=4U7_Sfqwdl8", { filter: format => format.container === 'mp4', quality: 'highestaudio' });
                     connection.play(stream, streamOptions)
                         .on("error", err => {
-                            console.log(err)
-                            return msg.channel.send("Oh lawd im dead")
+                            return catchErr(err, msg, `${module.exports.name}.js`, "Oh lawd im dead")
                         })
                         .on("finish", () => {
                             connection.disconnect();
                         })
                 });
-        } catch (error) {
-            console.log(error);
-            return msg.channel.send("Sorry I couldn't join the voice chat :(")
+        } catch (err) {
+            return catchErr(err, msg, `${module.exports.name}.js`, "Sorry I couldn't join the voice chat :(")
         }
     },
 }

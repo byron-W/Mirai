@@ -6,22 +6,23 @@ module.exports = {
     name: 'animeseason',
     description: 'Show anime that air in any season',
     usage: '<season> <year>',
-    aliases: ['aniseason', 'animeszn' ,'aniszn'],
+    aliases: ['aniseason', 'animeszn', 'aniszn'],
     cooldown: 10,
     class: 'weeb',
     args: true,
-    async execute(msg, args, con, linkargs, client) {
+    async execute(msg, args, con, linkargs, client, catchErr) {
         var year = args[1]
         var season = args[0].toLowerCase();
-        if ((!year) || (!season)) return msg.channel.send("Please supply a season and year to find!");
+        if ((isNaN(year)) || (!season)) return msg.channel.send("Please supply a valid season and year to find, respectively");
         const loading = client.emojis.cache.get(loademote);
+        if ((season !== "fall") && (season !== "summer") && (season !== "winter") && (season !== "spring")) return msg.channel.send("That isn't a season")
         let gen = await msg.channel.send(`Generating... ${loading}`);
         let { body } = await superagent
-            .get("https://api.jikan.moe/v3/season/" + year + "/" + season).catch(error => {
-                console.log(error);
+            .get("https://api.jikan.moe/v3/season/" + year + "/" + season).catch((err) => {
                 gen.delete();
-                return msg.channel.send("Please provide a season and year, respectively");
-            });
+                msg.channel.send("Please provide a season and year, respectively");
+                return;
+            })
         try {
             let currentIndex = 0
             let animelist = body.anime
@@ -29,7 +30,7 @@ module.exports = {
             function generateEmbed(start) {
                 let current = animelist.slice(start, 10 + start)
                 const embed = new Discord.MessageEmbed()
-                    .setTitle(`Here's what I found for __${season} ${year}__:`)
+                    .setTitle(`Here's what I found for __${body.season_name} ${year}__:`)
                     .setColor(blue)
                     .setThumbnail(body.anime[start].image_url)
                     .setFooter(`Page 1/${pagetotal}`)
@@ -68,7 +69,7 @@ module.exports = {
                     function generateEmbed2(start) {
                         let current = animelist.slice(start, 10 + start)
                         const embed2 = new Discord.MessageEmbed()
-                            .setTitle(`Here's what I found for __${season} ${year}__:`)
+                            .setTitle(`Here's what I found for __${body.season_name} ${year}__:`)
                             .setColor(blue)
                             .setThumbnail(body.anime[start].image_url)
                             .setFooter(`Page ${(start / 10) + 1}/${pagetotal}`)
@@ -82,11 +83,13 @@ module.exports = {
                     message.reactions.cache.clear();
                     message.edit(generateEmbed2(currentIndex))
                 });
+            }).catch((err) => {
+                return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
             })
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
+            catchErr(err, msg, `${module.exports.name}.js`, "Dev")
             gen.delete();
-            return msg.channel.send("Please provide a season and year, respectively");
+            return;
         }
     },
 }

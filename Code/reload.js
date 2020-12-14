@@ -3,7 +3,7 @@ module.exports = {
 	description: 'Reloads a command',
 	args: true,
 	usage: '[command name]',
-	class: 'devcmd',
+	class: 'admin',
 	execute(msg, args) {
 		const commandName = args[0].toLowerCase();
 		const command = msg.client.commands.get(commandName)

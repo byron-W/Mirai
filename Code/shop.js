@@ -11,7 +11,7 @@ module.exports = {
     args: false,
     execute(msg, args, con) {
         con.query(`SELECT * FROM roles LIMIT 11`, (err, rows) => {
-            if (err) throw err;
+            if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev");
             if (rows.length < 1) return msg.channel.send("Looks like we're sold out!")
             let JSONroles = JSON.stringify(rows);
             let parsedRoles = JSON.parse(JSONroles);
@@ -34,8 +34,7 @@ module.exports = {
                     .setThumbnail(msg.guild.iconURL())
                 return msg.channel.send(rshop);
             } catch (err) {
-                console.log(err);
-                return msg.channel.send("Either you need to add more items or I fucked up somewhere else");
+                return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
             }
         });
     },

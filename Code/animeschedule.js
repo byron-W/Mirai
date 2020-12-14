@@ -10,15 +10,17 @@ module.exports = {
     cooldown: 10,
     class: 'weeb',
     args: true,
-    async execute(msg, args, con, linkargs, client) {
+    async execute(msg, args, con, linkargs, client, catchErr) {
         var dayofweek = args[0].toLowerCase();
+        var days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        if (!days.includes(dayofweek)) return msg.channel.send("That isn't a day of the week");
         const loading = client.emojis.cache.get(loademote);
         let gen = await msg.channel.send(`Generating... ${loading}`);
         let { body } = await superagent
-            .get("https://api.jikan.moe/v3/schedule/" + dayofweek).catch(error => {
-                console.log(error);
+            .get("https://api.jikan.moe/v3/schedule/" + dayofweek).catch(err => {
+                catchErr(err, msg, `${module.exports.name}.js`, "Dev")
                 gen.delete();
-                return msg.channel.send("That isn't a day of the week");
+                return;
             });
         try {
             let day = '';
@@ -110,14 +112,15 @@ module.exports = {
                         message.reactions.cache.clear();
                         message.edit(generateEmbed2(currentIndex))
                     });
+                }).catch((err) => {
+                    return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
                 })
-            } catch (error) {
-                console.log(error);
+            } catch (err) {
+                catchErr(err, msg, `${module.exports.name}.js`, "Dev")
                 gen.delete();
-                return msg.channel.send("That isn't a day of the week");
+                return;
             }
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
             gen.delete();
             return msg.channel.send("That isn't a day of the week");
         }

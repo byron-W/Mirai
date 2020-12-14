@@ -9,11 +9,13 @@ module.exports = {
     cooldown: 5,
     class: 'moderation',
     args: true,
-    execute(msg, args, con, linkargs) {
+    execute(msg, args, con, linkargs, client, catchErr) {
+        if (!msg.member.hasPermission("BAN_MEMBERS")) return msg.channel.send("You are not worthy :pensive:");
         const user = msg.mentions.users.first();
         if (!user) return msg.channel.send(`You didn't mention the user to ban`);     //If the command mentions a user
         const member = msg.guild.member(user);
         if (!member) return msg.channel.send("That user isn't in this server")       //If the user is in the server
+        if (member.hasPermission("MANAGE_MESSAGES")) return msg.channel.send("You can't ban a moderator")
         let reason = linkargs[1];
         if (!reason) {
             member.ban({
@@ -29,8 +31,8 @@ module.exports = {
                     .setColor(red)
                 msg.channel.send(banEmbed);
             }).catch(err => {
-                console.error(err);
-                return msg.channel.send("I don't have the permissions to ban them");
+                catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to ban that user")
+                return;
             });
         } else {
             member.ban({
@@ -47,8 +49,8 @@ module.exports = {
                     .setColor(red)
                 msg.channel.send(banEmbed);
             }).catch(err => {
-                console.error(err);
-                return msg.channel.send("I don't have the permissions to ban them");
+                catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to ban that user")
+                return;
             });
         }
     },

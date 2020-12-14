@@ -6,7 +6,7 @@
     cooldown: 10,
     class: 'vc',
     args: true,
-    execute(msg, args) {
+    execute(msg, args, con, linkargs, client, catchErr) {
         let clientVoiceConnection = msg.guild.voice.connection;
         if (!clientVoiceConnection) return msg.channel.send(`I have to be in a voice channel to change the volume`)
         let uservolume = parseInt(args[0])
@@ -17,8 +17,7 @@
             clientVoiceConnection.dispatcher.setVolume(newvolume)
             return msg.channel.send(`The volume has been sent to ${uservolume}%`)
         } catch (err) {
-            console.log(err);
-            return msg.channel.send("I failed to change the volume")
+            if (err) return catchErr(err, msg, `${module.exports.name}.js`, "I failed to change the volume")
         }
     },
 }

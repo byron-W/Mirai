@@ -1,5 +1,5 @@
 ﻿const ytdl = require("ytdl-core");
-const streamOptions = { seek: 0, volume: 0.5 };
+const streamOptions = { begin: 0 };
 
 module.exports = {
     name: 'edgame',
@@ -8,7 +8,7 @@ module.exports = {
     cooldown: 5,
     class: 'vc',
     args: false,
-    execute(msg, args, con) {
+    execute(msg, args, con, linkargs, client, catchErr) {
         try {
             if (!msg.guild.voice.connection) return msg.channel.send(`I'm not in a voice channel`)
             let clientVoiceConnection = msg.guild.voice.connection;
@@ -30,21 +30,18 @@ module.exports = {
                         con.query(`SELECT * FROM randomsong WHERE id = ${0} AND gametype = "ED"`, (err, rows) => {
                             const songid = rows[0].number;
                             con.query(`SELECT * FROM edsongs WHERE songid = ${songid}`, (err, rows) => {
-                                if (err) return msg.channel.send(`Error occured in query for songid #${songid}`)
+                                if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
                                 if (rows.length < 1) {
                                     return msg.channel.send("I couldn't find any songs")
                                 }
                                 try {
                                     let song = rows[0].songlink;
-                                    const stream = ytdl("https://www.youtube.com/watch?v=" + song, { filter: 'audioonly', quality: 'highestaudio' });
+                                    const stream = ytdl("https://www.youtube.com/watch?v=" + song, { filter: format => format.container === 'mp4', quality: 'highestaudio' });
                                     clientVoiceConnection.play(stream, streamOptions)     //Plays the song
-                                        .on("error", error => {
-                                            console.log(rows[0].songid)
-                                            console.log(rows[0].songlink)
+                                        .on("error", err => {
                                             msg.channel.send(rows[0].songlink)
                                             msg.channel.send(rows[0].songid)
-                                            console.log(error)
-                                            return msg.channel.send("Error ocurred in playing ED song")
+                                            return catchErr(err, msg, `${module.exports.name}.js`, "Error ocurred in playing ED song")
                                         })
                                         .on("finish", () => {
                                             con.query(`UPDATE randomsong SET activity = "Inactive"`)
@@ -53,20 +50,17 @@ module.exports = {
                                     clientVoiceConnection.dispatcher.setBitrate(clientVoiceConnection.channel.bitrate)
                                     msg.channel.send("The game has officially started!");
                                 } catch {
-                                    console.log(rows[0].songid)
-                                    console.log(rows[0].songlink)
                                     msg.channel.send(rows[0].songlink)
                                     msg.channel.send(rows[0].songid)
-                                    console.log(error)
-                                    return msg.channel.send("Sorry I got a bad video")
+                                    return catchErr(err, msg, `${module.exports.name}.js`, "Error ocurred in playing ED song")
                                 }
                             });
                         });
                     });
                 });
             });
-        } catch {
-            return msg.channel.send(`I'm not in a voice channel`)
+        } catch (err) {
+            return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
         }
     },
 }

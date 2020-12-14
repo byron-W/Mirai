@@ -8,7 +8,7 @@ module.exports = {
     cooldown: 5,
     class: 'devcmd',
     args: true,
-    execute(msg, args, con, linkargs) {
+    execute(msg, args, con, linkargs, client, catchErr) {
         try {
             let table = linkargs[0].toLowerCase();
             let request = linkargs[1].toLowerCase();
@@ -16,7 +16,7 @@ module.exports = {
             if (request === "songid") {
                 let songid = parseInt(linkargs[2]);
                 con.query(`SELECT * FROM ${table}`, (err, rows) => {
-                    if (err) return msg.channel.send(`Error occured in query for ${table}`)
+                    if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
                     let maxid = rows.length;
                     con.query(`SELECT * FROM ${table} WHERE ${request} = ${songid}`, (err, rows) => {
                         if (err) return msg.channel.send(`Error occured in query for songid #${songid} in ${table}`)
@@ -36,7 +36,7 @@ module.exports = {
             } else {
                 let search = linkargs[2];
                 con.query(`SELECT * FROM ${table} WHERE ${request} LIKE "%${search}%"`, (err, rows) => {
-                    if (err) return msg.channel.send(`Error occured in query for ${search} in ${table}`)
+                    if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
                     if (rows.length < 1) return msg.channel.send("Couldn't find any results")
                     let JSONrows = JSON.stringify(rows);
                     let parsedRows = JSON.parse(JSONrows);
@@ -90,7 +90,7 @@ module.exports = {
                 });
             }
         } catch (err) {
-            return msg.channel.send(`Remember the format\n${prefix}rowinfo <table> | <request> | <search>`)
+            return catchErr(err, msg, `${module.exports.name}.js`, `Remember the format\n${prefix}rowinfo <table> | <request> | <search>`)
         }
     },
 }

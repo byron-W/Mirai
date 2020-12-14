@@ -12,7 +12,7 @@ module.exports = {
     execute(msg, args, con) {
         let name = args.join(" ");
         con.query(`SELECT * FROM roll WHERE name LIKE "%${name}%"`, (err, rows) => {
-            if (err) return msg.channel.send("I couldn't find that person")
+            if (err) return catchErr(err, msg, `${module.exports.name}.js`, "I couldn't find that person")
             try {
                 let pername = rows[0].name;
                 let aniname = rows[0].animename;

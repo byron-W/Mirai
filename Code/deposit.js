@@ -10,69 +10,72 @@ module.exports = {
     class: 'economy',
     args: true,
     execute(msg, args, con) {
-        let author = msg.author
-        let depositamt = parseInt(args[0]);
-        let deposithalf = msg.content.endsWith("half");
-        if (isNaN(args[0]) && (!deposithalf)) return msg.channel.send("That's not an amount of coins");
-        con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
-            if (err) throw err;
-            if (rows.length < 1) return msg.channel.send("You've gotta have money to deposit");
-            let currentcoins = rows[0].coins;
-            con.query(`SELECT * FROM deposittimer WHERE id = "${author.id}"`, (err, rows) => {
-                if (err) return msg.channel.send("I fucked up")
-                if (rows.length < 1) con.query(`INSERT INTO deposittimer (id, lastused) VALUES ("${author.id}", 'Unused')`)
-                try {
-                    if (rows[0].lastused != moment().format('k')) {
-                        if (deposithalf) {
-                            let finalamt = currentcoins / 2;
-                            con.query(`UPDATE coins SET coins = ${finalamt} WHERE id = "${author.id}"`)
-                            con.query(`SELECT coins FROM coins WHERE id = "${author.id}"`, (err, rows) => {
-                                let checkcoins = rows[0].coins;
-                                if (checkcoins != finalamt) con.query(`UPDATE coins SET coins = ${finalamt} WHERE id = "${author.id}"`);
-                            });
-                            con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
-                                if (rows.length < 1) con.query(`UPDATE coins SET bank = 0 WHERE id = "${author.id}"`)
-                                let currentbankamt = rows[0].bank
-                                let finalbankamt = finalamt + currentbankamt;
-                                con.query(`UPDATE coins SET bank = ${finalbankamt} WHERE id = "${author.id}"`)
-                                let rfembed = new Discord.MessageEmbed()
-                                    .setTitle(`You've successfully deposited 50% of your coins`)
-                                    .setDescription(`Wallet coins: ${finalamt}\nDeposited coins: ${finalbankamt}`)
-                                    .setAuthor(author.username, author.avatarURL())
-                                    .setColor(darker_green)
-                                msg.reply(rfembed);
-                            });
+        try {
+            let author = msg.author
+            let depositamt = parseInt(args[0]);
+            let deposithalf = msg.content.endsWith("half");
+            if (isNaN(args[0]) && (!deposithalf)) return msg.channel.send("That's not an amount of coins");
+            con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
+                if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev");
+                if (rows.length < 1) return msg.channel.send("You've gotta have money to deposit");
+                let currentcoins = rows[0].coins;
+                con.query(`SELECT * FROM deposittimer WHERE id = "${author.id}"`, (err, rows) => {
+                    if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev");
+                    if (rows.length < 1) con.query(`INSERT INTO deposittimer (id, lastused) VALUES ("${author.id}", 'Unused')`)
+                    try {
+                        if (rows[0].lastused != moment().format('k')) {
+                            if (deposithalf) {
+                                let finalamt = currentcoins / 2;
+                                con.query(`UPDATE coins SET coins = ${finalamt} WHERE id = "${author.id}"`)
+                                con.query(`SELECT coins FROM coins WHERE id = "${author.id}"`, (err, rows) => {
+                                    let checkcoins = rows[0].coins;
+                                    if (checkcoins != finalamt) con.query(`UPDATE coins SET coins = ${finalamt} WHERE id = "${author.id}"`);
+                                });
+                                con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
+                                    if (rows.length < 1) con.query(`UPDATE coins SET bank = 0 WHERE id = "${author.id}"`)
+                                    let currentbankamt = rows[0].bank
+                                    let finalbankamt = finalamt + currentbankamt;
+                                    con.query(`UPDATE coins SET bank = ${finalbankamt} WHERE id = "${author.id}"`)
+                                    let rfembed = new Discord.MessageEmbed()
+                                        .setTitle(`You've successfully deposited 50% of your coins`)
+                                        .setDescription(`Wallet coins: ${finalamt}\nDeposited coins: ${finalbankamt}`)
+                                        .setAuthor(author.username, author.avatarURL())
+                                        .setColor(darker_green)
+                                    msg.reply(rfembed);
+                                });
+                            } else {
+                                if (isNaN(depositamt)) return;
+                                if (depositamt > (currentcoins / 2)) return msg.channel.send("You may not deposit more than half of you coins at one time")
+                                let finalamt = currentcoins - depositamt;
+                                con.query(`UPDATE coins SET coins = ${finalamt} WHERE id = "${author.id}"`)
+                                con.query(`SELECT coins FROM coins WHERE id = "${author.id}"`, (err, rows) => {
+                                    let checkcoins = rows[0].coins;
+                                    if (checkcoins != finalamt) con.query(`UPDATE coins SET coins = ${finalamt} WHERE id = "${author.id}"`);
+                                });
+                                con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
+                                    if (rows.length < 1) con.query(`UPDATE coins SET bank = 0 WHERE id = "${author.id}"`)
+                                    let currentbankamt = rows[0].bank
+                                    let finalbankamt = depositamt + currentbankamt;
+                                    con.query(`UPDATE coins SET bank = ${finalbankamt} WHERE id = "${author.id}"`)
+                                    let rfembed = new Discord.MessageEmbed()
+                                        .setTitle(`You've successfully deposited ${depositamt} coins`)
+                                        .setDescription(`Wallet coins: ${finalamt}\nDeposited coins: ${finalbankamt}`)
+                                        .setAuthor(author.username, author.avatarURL())
+                                        .setColor(darker_green)
+                                    msg.reply(rfembed);
+                                });
+                            }
+                            con.query(`UPDATE deposittimer SET lastused = '${moment().format(`k`)}' WHERE id = "${author.id}"`)
                         } else {
-                            if (isNaN(depositamt)) return;
-                            if (depositamt > (currentcoins / 2)) return msg.channel.send("You may not deposit more than half of you coins at one time")
-                            let finalamt = currentcoins - depositamt;
-                            con.query(`UPDATE coins SET coins = ${finalamt} WHERE id = "${author.id}"`)
-                            con.query(`SELECT coins FROM coins WHERE id = "${author.id}"`, (err, rows) => {
-                                let checkcoins = rows[0].coins;
-                                if (checkcoins != finalamt) con.query(`UPDATE coins SET coins = ${finalamt} WHERE id = "${author.id}"`);
-                            });
-                            con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
-                                if (rows.length < 1) con.query(`UPDATE coins SET bank = 0 WHERE id = "${author.id}"`)
-                                let currentbankamt = rows[0].bank
-                                let finalbankamt = depositamt + currentbankamt;
-                                con.query(`UPDATE coins SET bank = ${finalbankamt} WHERE id = "${author.id}"`)
-                                let rfembed = new Discord.MessageEmbed()
-                                    .setTitle(`You've successfully deposited ${depositamt} coins`)
-                                    .setDescription(`Wallet coins: ${finalamt}\nDeposited coins: ${finalbankamt}`)
-                                    .setAuthor(author.username, author.avatarURL())
-                                    .setColor(darker_green)
-                                msg.reply(rfembed);
-                            });
+                            return msg.channel.send(`You've gotta wait ${moment().endOf('hour').fromNow(true)} till you can deposit again`)
                         }
-                        con.query(`UPDATE deposittimer SET lastused = '${moment().format(`k`)}' WHERE id = "${author.id}"`)
-                    } else {
-                        return msg.channel.send(`You've gotta wait ${moment().endOf('hour').fromNow(true)} till you can deposit again`)
+                    } catch (err) {
+                        return catchErr(err, msg, `${module.exports.name}.js`, "Say something first to get coins")
                     }
-                } catch (error) {
-                    console.log(error);
-                    return msg.channel.send("Say something first so I can recognize you")
-                }
-            });
-        })
+                });
+            })
+        } catch (err) {
+            return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
+        }
     },
 }

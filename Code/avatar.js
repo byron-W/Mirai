@@ -17,7 +17,7 @@ module.exports = {
             let umenembed = new Discord.MessageEmbed()       //Sends a fancy display of execution information if the command isn't asking for help
                 .setTitle(`__**${user.username}'s Avatar**__`)
                 .setColor(ucolor)
-                .setThumbnail(umenicon)
+                .setImage(umenicon)
                 .setURL(umenicon)
             msg.channel.send(umenembed);
         } else {
@@ -26,7 +26,7 @@ module.exports = {
             let autembed = new Discord.MessageEmbed()       //Sends a fancy display of execution information if the command isn't asking for help
                 .setTitle("__**Your Avatar**__")
                 .setColor(rcolor)
-                .setThumbnail(uicon)
+                .setImage(uicon)
                 .setURL(uicon)
             msg.channel.send(autembed);
         }
