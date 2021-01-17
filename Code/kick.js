@@ -1,31 +1,53 @@
 const Discord = require("discord.js");
-const { red } = require("../config.json");
-const moment = require("moment");
+const { red, reportchan } = require("../config.json");
 
 module.exports = {
     name: 'kick',
     description: `What's the shape of Italy?`,
-    usage: '<user>',
+    usage: '<user> (reason optional)',
     cooldown: 5,
     class: 'moderation',
     args: true,
-    execute(msg) {
+    execute(msg, args, client, con, catchErr) {
+        const log = client.channels.cache.get(reportchan);
+        if (!msg.member.hasPermission("KICK_MEMBERS")) return;
         const user = msg.mentions.users.first();
-        if (!user) return msg.channel.send(`You didn't mention the user to kick`)     //If the command mentions a user
+        if (!user) return msg.channel.send(`You didn't mention a user to kick`).then(m => m.delete({ timeout: 5000 }));    //If the command mentions a user
         const member = msg.guild.member(user);
-        if (!member) return msg.channel.send("That user isn't in this server")       //If the user is in the server
-        member.kick("They deserved it").then(async () => {
-            let uicon = user.displayAvatarURL();
-            let kickEmbed = new Discord.MessageEmbed()     //Sends a fancy display of execution information
-                .setTitle(`__${user.username} was kicked :(__`)
-                .setThumbnail(uicon)
-                .addField("Kicked by:", msg.author.username)
-                .addField("Kicked in:", msg.channel.name)
-                .addField("Time:", moment().format(`LT`))
-                .setColor(red)
-            return msg.channel.send(kickEmbed);
-        }).catch(err => {
-            return catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to kick them");
-        });
+        if (!member) return msg.channel.send("That user isn't in this server").then(m => m.delete({ timeout: 5000 }));      //If the user is in the server
+        if (member.hasPermission("KICK_MEMBERS")) return msg.channel.send("You can't kick a moderator").then(m => m.delete({ timeout: 5000 }));
+        if (!args[1]) {
+            member.kick("Unknown").then(async () => {
+                let uicon = user.displayAvatarURL();
+                let kickEmbed = new Discord.MessageEmbed()     //Sends a fancy display of execution information
+                    .setTitle(`${user.tag} was kicked`)
+                    .setThumbnail(uicon)
+                    .addField("__Kicked by:__", msg.author.username)
+                    .addField("__Kicked in:__", msg.channel.name)
+                    .setTimestamp()
+                    .setColor(red)
+                return log.send(kickEmbed);
+            }).catch(err => {
+                catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to kick that user");
+                return;
+            });
+        } else {
+            let reason = args.slice(1).join(" ");
+            member.kick(reason).then(async () => {
+                let uicon = user.displayAvatarURL();
+                let kickEmbed = new Discord.MessageEmbed()     //Sends a fancy display of execution information
+                    .setTitle(`${user.tag} was kicked`)
+                    .setThumbnail(uicon)
+                    .addField("__Kicked by:__", msg.author.username)
+                    .addField("__Kicked in:__", msg.channel.name)
+                    .addField("__Reason:__", reason)
+                    .setTimestamp()
+                    .setColor(red)
+                return log.send(kickEmbed);
+            }).catch(err => {
+                catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to kick that user");
+                return;
+            });
+        }
     },
 }

@@ -26,7 +26,7 @@ module.exports = {
                         con.query(`SELECT * FROM unclaimed`, (err, rows) => {
                             let numofpeeps = rows.length;
                             con.query(`SELECT * FROM randomroll`, (err, rows) => {
-                                const randomid = Math.floor(Math.random() * numofpeeps)
+                                const claimid = Math.floor(Math.random() * numofpeeps)
                                 if (rows.length < 1) con.query(`INSERT INTO randomroll (number) VALUES (${randomid})`)
                                 con.query(`UPDATE randomroll SET number = ${randomid}`)
                                 con.query(`SELECT * FROM randomroll`, (err, rows) => {

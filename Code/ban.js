@@ -1,55 +1,51 @@
 const Discord = require("discord.js");
-const { red } = require("../config.json");
-const moment = require("moment");
+const { red, reportchan } = require("../config.json");
 
 module.exports = {
     name: 'ban',
     description: 'Smack down that mf ban hammer',
-    usage: '<user> | <reason>',
+    usage: '<user> (reason optional)',
     cooldown: 5,
     class: 'moderation',
     args: true,
-    execute(msg, args, con, linkargs, client, catchErr) {
-        if (!msg.member.hasPermission("BAN_MEMBERS")) return msg.channel.send("You are not worthy :pensive:");
+    execute(msg, args, client, con, catchErr) {
+        const log = client.channels.cache.get(reportchan);
+        if (!msg.member.hasPermission("BAN_MEMBERS")) return;
         const user = msg.mentions.users.first();
-        if (!user) return msg.channel.send(`You didn't mention the user to ban`);     //If the command mentions a user
+        if (!user) return msg.channel.send(`You didn't mention the user to ban`).then(m => m.delete({ timeout: 5000 }));      //If the command mentions a user
         const member = msg.guild.member(user);
-        if (!member) return msg.channel.send("That user isn't in this server")       //If the user is in the server
-        if (member.hasPermission("MANAGE_MESSAGES")) return msg.channel.send("You can't ban a moderator")
-        let reason = linkargs[1];
-        if (!reason) {
-            member.ban({
-                reason: "They were bad!",
-            }).then(async () => {
+        if (!member) return msg.channel.send("That user isn't in this server").then(m => m.delete({ timeout: 5000 }));    //If the user is in the server
+        if (member.hasPermission("BAN_MEMBERS")) return msg.channel.send("You can't ban a moderator").then(m => m.delete({ timeout: 5000 }));
+        if (!args[1]) {
+            member.ban("Unknown").then(async () => {
                 let uicon = user.displayAvatarURL();
                 let banEmbed = new Discord.MessageEmbed()      //Sends a fancy display of execution information
-                    .setTitle(`**${user.username} was banned :(**`)
+                    .setTitle(`${user.tag} was banned`)
                     .setThumbnail(uicon)
-                    .addField("Banned by:", msg.author.username)
-                    .addField("Banned in:", msg.channel.name)
-                    .addField("Time: ", moment().format(`LT`))
+                    .addField("__Banned by:__", msg.author.username)
+                    .addField("__Banned in:__", msg.channel.name)
+                    .setTimestamp()
                     .setColor(red)
-                msg.channel.send(banEmbed);
+                return log.send(banEmbed);
             }).catch(err => {
-                catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to ban that user")
+                catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to ban that user");
                 return;
             });
         } else {
-            member.ban({
-                reason: reason,
-            }).then(async () => {
+            let reason = args.slice(1).join(" ");
+            member.ban(reason).then(async () => {
                 let uicon = user.displayAvatarURL();
                 let banEmbed = new Discord.MessageEmbed()      //Sends a fancy display of execution information
-                    .setTitle(`**${user.username} was banned :(**`)
-                    .setDescription(`Reason:\n${reason}`)
+                    .setTitle(`${user.tag} was banned`)
                     .setThumbnail(uicon)
-                    .addField("Banned by:", msg.author.username)
-                    .addField("Banned in:", msg.channel.name)
-                    .addField("Time: ", moment().format(`LT`))
+                    .addField("__Banned by:__", msg.author.username)
+                    .addField("__Banned in:__", msg.channel.name)
+                    .addField("__Reason:__", reason)
+                    .setTimestamp()
                     .setColor(red)
-                msg.channel.send(banEmbed);
+                return log.send(banEmbed);
             }).catch(err => {
-                catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to ban that user")
+                catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to ban that user");
                 return;
             });
         }

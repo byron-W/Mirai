@@ -1,78 +1,79 @@
 const Discord = require("discord.js");
-const { orange } = require("../config.json");
+const { orange, reportchan } = require("../config.json");
 
 module.exports = {
     name: 'mute',
     description: 'Mute a user from all text and voice chats',
-    usage: '<user> or <user> <minutes>',
+    usage: '<user> (minutes optional)',
     cooldown: 5,
     class: 'moderation',
     args: true,
-    execute(msg, args, con, linkargs, client, catchErr) {
+    execute(msg, args, client, con, catchErr) {
         try {
-            if (!msg.member.hasPermission("MUTE_MEMBERS")) return msg.channel.send("You are not worthy :pensive:");
+            const log = client.channels.cache.get(reportchan);
+            if (!msg.member.hasPermission("MUTE_MEMBERS")) return;
             const user = msg.mentions.users.first();
-            if (!user) return msg.channel.send(`You didn't mention the user to mute`);     //If the command mentions a user
+            if (!user) return msg.channel.send(`You didn't mention the user to mute`).then(m => m.delete({ timeout: 5000 }))      //If the command mentions a user
             const member = msg.guild.member(user);
-            if (!member) return msg.channel.send("That user isn't in this server")       //If the user is in the server
+            if (!member) return msg.channel.send("That user isn't in this server").then(m => m.delete({ timeout: 5000 }))       //If the user is in the server
+            if (member.hasPermission("MUTE_MEMBERS")) return msg.channel.send("You can't mute a moderator").then(m => m.delete({ timeout: 5000 }))
             let muterole = msg.guild.roles.cache.find(r => r.name === "muted");       //Creation of mute role
             let muted = member.roles.cache.find(r => r.name === "muted");
-            if (muted) return msg.channel.send("That user is already muted")        //If the user is muted already
-            if (!muterole) return msg.channel.send("Make a muted role")
+            if (muted) return msg.channel.send("That user is already muted").then(m => m.delete({ timeout: 5000 }))       //If the user is muted already
+            if (!muterole) return msg.channel.send("Make a muted role").then(m => m.delete({ timeout: 5000 }))
+
+            msg.guild.channels.cache.forEach(f => {
+                f.updateOverwrite(muterole, {
+                    SEND_MESSAGES: false,
+                    READ_MESSAGE_HISTORY: false,
+                    ADD_REACTIONS: false,
+                    ATTACH_FILES: false,
+                    MENTION_EVERYONE: false,
+                    SPEAK: false
+                })
+            });
             if (!args[1]) {
-                msg.guild.channels.cache.forEach(f => {
-                    f.updateOverwrite(muterole, {
-                        SEND_MESSAGES: false,
-                        READ_MESSAGE_HISTORY: false,
-                        ADD_REACTIONS: false,
-                        ATTACH_FILES: false,
-                        MENTION_EVERYONE: false,
-                        SPEAK: false
-                    })
-                });
-                member.roles.add(muterole).catch(console.error);      //Adds mute role to the user
-                let uicon = user.displayAvatarURL();
-                let muteEmbed = new Discord.MessageEmbed()     //Sends a fancy display of execution information
-                    .setTitle(`**${user.username} was muted :(**`)
-                    .setThumbnail(uicon)
-                    .addField("Muted by:", msg.author.username)
-                    .setColor(orange)
-                return msg.channel.send(muteEmbed);
-            } if (args[1]) {
-                let time = parseInt(args[1]);
-                if (!time) return msg.channel.send("That isn't a valid time to mute someone")
-                msg.guild.channels.cache.forEach(f => {
-                    f.updateOverwrite(muterole, {
-                        SEND_MESSAGES: false,
-                        READ_MESSAGE_HISTORY: false,
-                        ADD_REACTIONS: false,
-                        ATTACH_FILES: false,
-                        MENTION_EVERYONE: false,
-                        SPEAK: false
-                    })
-                });
-                member.roles.add(muterole).catch(console.error);      //Adds mute role to the user
-                let uicon = user.displayAvatarURL();
-                let muteEmbed = new Discord.MessageEmbed()     //Sends a fancy display of execution information
-                    .setTitle(`**${user.username} was muted for ${time} minute(s) :(**`)
-                    .setThumbnail(uicon)
-                    .addField("Muted by:", msg.author.username)
-                    .setColor(orange)
-                msg.channel.send(muteEmbed);
-                setTimeout(() => {
-                    if (!member.roles.cache.find(r => r.name === "muted")) return;
-                    member.roles.remove(muterole, `Temporary mute expired.`);
+                member.roles.add(muterole).then(async () => {
                     let uicon = user.displayAvatarURL();
-                    unmuteEmbed = new Discord.MessageEmbed()       //Fancy display of execution information
-                        .setTitle(`**${user.username} was unmuted after a ${time} minute mute**`)
+                    let muteEmbed = new Discord.MessageEmbed()     //Sends a fancy display of execution information
+                        .setTitle(`${user.tag} was muted`)
                         .setThumbnail(uicon)
-                        .addField("Unmuted by:", msg.author.username)
+                        .addField("__Muted by:__", msg.author.username)
+                        .setTimestamp()
                         .setColor(orange)
-                    msg.channel.send(unmuteEmbed);
-                }, time * 60000);
+                    return log.send(muteEmbed);
+                }).catch(err => {
+                    catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to mute that user");
+                    return;
+                });
+            } else {
+                let time = parseInt(args[1]);
+                if (!time) return msg.channel.send("That isn't a valid time to mute someone");
+                member.roles.add(muterole).then(() => {
+                    let uicon = user.displayAvatarURL();
+                    let muteEmbed = new Discord.MessageEmbed()     //Sends a fancy display of execution information
+                        .setTitle(`${user.tag} was muted for ${time} minute(s)`)
+                        .setThumbnail(uicon)
+                        .addField("__Muted by:__", msg.author.username)
+                        .setColor(orange)
+                        .setTimestamp()
+                    log.send(muteEmbed);
+                    setTimeout(function () {
+                        member.roles.remove(muterole, `Temporary mute expired.`);
+                        unmuteEmbed = new Discord.MessageEmbed()       //Fancy display of execution information
+                            .setTitle(`**${user.tag} was unmuted after a ${time} minute mute**`)
+                            .setThumbnail(uicon)
+                            .setColor(orange)
+                            .setTimestamp()
+                        log.send(unmuteEmbed);
+                    }, 5000)
+                }).catch(err => {
+                    catchErr(err, msg, `${module.exports.name}.js`, "I don't have the permissions to mute that user");
+                    return;
+                });
             }
         } catch (err) {
-            catchErr(err, msg, `${module.exports.name}.js`, "Dev")
+            catchErr(err, msg, `${module.exports.name}.js`, "Dev");
             return;
         }
     },

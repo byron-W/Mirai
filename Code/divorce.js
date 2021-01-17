@@ -39,7 +39,7 @@
                     nocollector.on('collect', m => {
                         nocollector.stop();
                         yescollector.stop();
-                        return msg.channel.send(":heart:IN THE NAME OF LOVE:heart:, you have called off the divorce :)");
+                        msg.channel.send(":heart:IN THE NAME OF LOVE:heart:, you have called off the divorce :)");
                         nocollector.on('end', collected => {
                             return msg.channel.send("You took to long man, divorce called off")
                         });

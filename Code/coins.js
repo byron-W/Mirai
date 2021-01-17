@@ -24,6 +24,7 @@ module.exports = {
                         .setAuthor(user.username, user.avatarURL())
                         .setColor(darker_green)
                         .setTitle(`Wallet coins: ${coins}\nDeposited coins: ${bankcoins}\nTotal coins: ${total}`)
+                        .setTimestamp()
                     msg.channel.send(cembed);
                 });
             } else {
@@ -37,6 +38,7 @@ module.exports = {
                         .setAuthor(author.username, author.avatarURL())
                         .setColor(darker_green)
                         .setTitle(`Wallet coins: ${coins}\nDeposited coins: ${bankcoins}\nTotal coins: ${total}`)
+                        .setTimestamp()
                     msg.channel.send(cembed);
                 });
             }

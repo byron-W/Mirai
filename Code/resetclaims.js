@@ -21,7 +21,7 @@
                 con.query(`UPDATE roll SET claimedby = 'None'`)
                 con.query(`UPDATE roll SET claimuser = 'None'`)
                 con.query(`INSERT INTO unclaimed SELECT * FROM roll WHERE availability = 'Unclaimed';`)
-                return msg.channel.send("The claims have been released into the wild")
+                msg.channel.send("The claims have been released into the wild")
                 yescollector.on('end', collected => {
                     return msg.channel.send("I don't have all day bro, im out")
                 });
@@ -29,7 +29,7 @@
             nocollector.on('collect', m => {
                 nocollector.stop();
                 yescollector.stop();
-                return msg.channel.send("You have chosen to spare everyone, wise decision");
+                msg.channel.send("You have chosen to spare everyone, wise decision");
                 nocollector.on('end', collected => {
                     return msg.channel.send("I don't have all day bro, im out")
                 });

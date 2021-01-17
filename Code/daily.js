@@ -26,6 +26,7 @@ module.exports = {
                                 .setTitle(`Here are your ${dailyamt} daily coins ${author.username}`)
                                 .setAuthor(author.username, author.avatarURL())
                                 .setColor(darker_green)
+                                .setTimestamp()
                             msg.channel.send(dembed);
                         });
                     } else {
@@ -33,6 +34,7 @@ module.exports = {
                             .setTitle(`You must wait ${moment().endOf(`day`).fromNow(true)}`)
                             .setAuthor(author.username, author.avatarURL())
                             .setColor(darker_green)
+                            .setTimestamp()
                         msg.channel.send(dembed);
                     }
                 } catch (err) {

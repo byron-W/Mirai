@@ -21,7 +21,7 @@
                 con.query(`UPDATE deposittimer SET lastused = 'Unused'`);
                 con.query(`UPDATE withdrawtimer SET lastused = 'Unused'`);
                 con.query(`UPDATE robtimer SET lastused = 'Unused'`);
-                return msg.channel.send("The timers have been reset")
+                msg.channel.send("The timers have been reset")
                 yescollector.on('end', collected => {
                     return msg.channel.send("I don't have all day bro, im out")
                 });
@@ -29,7 +29,7 @@
             nocollector.on('collect', m => {
                 nocollector.stop();
                 yescollector.stop();
-                return msg.channel.send("And the endless march of time continues");
+                msg.channel.send("And the endless march of time continues");
                 nocollector.on('end', collected => {
                     return msg.channel.send("I don't have all day bro, im out")
                 });
