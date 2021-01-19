@@ -11,7 +11,7 @@ module.exports = {
     args: false,
     execute(msg, args, con, linkargs, client, catchErr) {
         try {
-            con.query(`SELECT * FROM coins ORDER BY total DESC LIMIT 5`, (err, rows) => {
+            con.query(`SELECT * FROM coins ORDER BY total`, (err, rows) => {
                 if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
                 if (rows.length < 1) return msg.channel.send("Everyone is broke!")
                 let JSONroles = JSON.stringify(rows);
@@ -29,7 +29,7 @@ module.exports = {
                             .setFooter(`Page 1/${pagetotal}`)
                         let finmsg = '';
                         current.forEach((row) => {
-                            finmsg += `\n#${rank++} ${row.username} - Coins: ${row.total}`;
+                            finmsg += `\n#${rank++} <@${row.id}> - Coins: ${row.total}`;
                         })
                         embed.setDescription(finmsg)
                         return embed
@@ -49,7 +49,7 @@ module.exports = {
                         )
                         collector.on('collect', r => {
                             r.emoji.name === '⬅️' ? currentIndex -= 5 : currentIndex += 5;
-                            if (r.emoji.name === '⬅️') rank -= 5;
+                            rank = currentIndex + 1;
                             if (currentIndex < 0) {
                                 currentIndex = 0;
                                 return;
@@ -68,7 +68,7 @@ module.exports = {
                                     .setFooter(`Page ${(start / 5) + 1}/${pagetotal}`)
                                 let finmsg = '';
                                 current.forEach((row) => {
-                                    finmsg += `\n#${rank++} ${row.username} - Coins: ${row.total}`;
+                                    finmsg += `\n#${rank++} <@${row.id}> - Coins: ${row.total}`;
                                 })
                                 embed2.setDescription(finmsg)
                                 return embed2

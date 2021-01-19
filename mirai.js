@@ -419,7 +419,8 @@ client.on("messageDelete", async oldmsg => {
                 .setTitle(`**${oldmsg.author.username}'s** message was deleted`)
                 .setThumbnail("https://66.media.tumblr.com/7faf76a655814723d93f17aac4223adc/tumblr_p67vmb88qf1wctgsho1_250.jpg")
                 .setColor(pink)
-                .setDescription(`__Message:__ ${oldmsg.content}\n__Channel:__ ${oldmsg.channel.name}\n${bruh.toDateString()} at ${bruh.toLocaleTimeString()}`)
+                .setDescription(`__Message:__ ${oldmsg.content}\n__Channel:__ ${oldmsg.channel.name}`)
+                .setTimestamp();
             logchan.send(delmsg);
             logchan.send(oldimg);
             nutchan.send(delmsg);
@@ -430,7 +431,8 @@ client.on("messageDelete", async oldmsg => {
                 .setTitle(`**${oldmsg.author.username}'s** message was deleted`)
                 .setThumbnail("https://66.media.tumblr.com/7faf76a655814723d93f17aac4223adc/tumblr_p67vmb88qf1wctgsho1_250.jpg")
                 .setColor(pink)
-                .setDescription(`__Channel:__ ${oldmsg.channel.name}\n${bruh.toDateString()} at ${bruh.toLocaleTimeString()}`)
+                .setDescription(`__Channel:__ ${oldmsg.channel.name}`)
+                .setTimestamp()
             logchan.send(delmsg);
             logchan.send(oldimg);
             nutchan.send(delmsg);
@@ -442,7 +444,8 @@ client.on("messageDelete", async oldmsg => {
             .setTitle(`**${oldmsg.author.username}'s** message was deleted`)
             .setThumbnail("https://66.media.tumblr.com/7faf76a655814723d93f17aac4223adc/tumblr_p67vmb88qf1wctgsho1_250.jpg")
             .setColor(pink)
-            .setDescription(`__Message:__ ${oldmsg.content}\n__Channel:__ ${oldmsg.channel.name}\n${bruh.toDateString()} at ${bruh.toLocaleTimeString()}`)
+            .setDescription(`__Message:__ ${oldmsg.content}\n__Channel:__ ${oldmsg.channel.name}`)
+            .setTimestamp()
         logchan.send(delmsg);
         nutchan.send(delmsg);
     }
