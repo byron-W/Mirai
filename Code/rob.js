@@ -12,8 +12,8 @@ module.exports = {
         try {
             let author = msg.author;
             let user = msg.mentions.users.first();
-            if (!user) return msg.channel.send("That is not a user")
-            if (user.id === author.id) return msg.channel.send("Kinda sad man")
+            if (!user) return msg.channel.send("That is not a user");
+            if (user.id === author.id) return msg.channel.send("Kinda sad man");
             const jail = client.emojis.cache.get(jailemote);
             con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
                 if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
@@ -26,9 +26,15 @@ module.exports = {
                     let random = Math.floor(Math.random() * 2) + 1;
                     con.query(`SELECT * FROM robtimer WHERE id = "${author.id}"`, (err, rows) => {
                         if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
-                        if (rows.length < 1) con.query(`INSERT INTO robtimer (id, lastused) VALUES ("${author.id}", 'Unused')`)
+                        var used;
+                        if (rows.length < 1) {
+                            con.query(`INSERT INTO robtimer (id, lastused) VALUES ("${author.id}", 'Unused')`)
+                            used = 'Unused';
+                        } else {
+                            used = rows[0].lastused;
+                        }
                         try {
-                            if (rows[0].lastused != moment().format(`k`)) {
+                            if (used != moment().format(`k`)) {
                                 con.query(`UPDATE robtimer SET lastused = '${moment().format(`k`)}' WHERE id = "${author.id}"`)
                                 if (random == 1) {
                                     let robberfinal = Math.floor(robbercoins * 0.75);
@@ -78,7 +84,7 @@ module.exports = {
                                 return msg.channel.send(`You've gotta wait ${moment().endOf('hour').fromNow(true)} till you can rob someone again`)
                             }
                         } catch (err) {
-                            return catchErr(err, msg, `${module.exports.name}.js`, "Say something first to get coins");
+                            return catchErr(err, msg, `${module.exports.name}.js`, "Dev");
                         }
                     });
                 });

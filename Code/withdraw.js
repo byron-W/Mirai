@@ -20,10 +20,16 @@ module.exports = {
                 if (rows.length < 1) return msg.channel.send("You've gotta have money to deposit");
                 let currentcoins = rows[0].coins;
                 con.query(`SELECT * FROM withdrawtimer WHERE id = "${author.id}"`, (err, rows) => {
-                    if (err) return msg.channel.send("I fucked up")
-                    if (rows.length < 1) con.query(`INSERT INTO withdrawtimer (id, lastused) VALUES ("${author.id}", 'Unused')`)
+                    if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev");
+                    var used;
+                    if (rows.length < 1) {
+                        con.query(`INSERT INTO withdrawtimer (id, lastused) VALUES ("${author.id}", 'Unused')`)
+                        used = 'Unused';
+                    } else {
+                        used = rows[0].lastused;
+                    }
                     try {
-                        if (rows[0].lastused != moment().format('k')) {
+                        if (used != moment().format('k')) {
                             if (withdrawall) {
                                 con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
                                     if (!rows.length) {
@@ -91,7 +97,7 @@ module.exports = {
                             return msg.channel.send(`You've gotta wait ${moment().endOf('hour').fromNow(true)} till you can withdraw again`)
                         }
                     } catch (err) {
-                        return catchErr(err, msg, `${module.exports.name}.js`, "Say something first so to get coins")
+                        return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
                     }
                 });
             })

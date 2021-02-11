@@ -3,7 +3,7 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const fs = require("fs");
 const { token, sqlpass } = require("./token.json");
-const { prefix, pink, lavender, crimson, green, devid } = require("./config.json");
+const { prefix, pink, lavender, crimson, green, devid, big_nut } = require("./config.json");
 const moment = require("moment")
 const mysql = require("mysql");
 const wait = require('util').promisify(setTimeout);
@@ -92,7 +92,6 @@ function generateCoins() {
     return Math.floor(Math.random() * (100 - 10 + 1)) + 10;
 }
 client.on("message", async msg => {
-
     try {
         let author = msg.author;
         if (author.bot) return;     //Doesn't let the bot respond to itself
@@ -101,11 +100,11 @@ client.on("message", async msg => {
         con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
             try {
                 if (err) return msg.channel.send(`${author.username}, I cannot give you coins due to emojis or other weird characters in your username\nPlease change it to stop recieving this message and to recieve coins`)
+                if (msg.content.startsWith(prefix)) return;
                 if (rows.length < 1) {
                     con.query(`INSERT INTO coins (id, coins, bank, total, username) VALUES ("${author.id}", ${generateCoins()}, 0, ${generateCoins()}, "${noemoji}")`)
                 } else {
                     let coins = rows[0].coins;
-                    if (msg.content.startsWith(prefix)) return;
                     con.query(`UPDATE coins SET coins = ${coins + generateCoins()} WHERE id = "${author.id}"`)
                 }
                 if (rows.length > 1) {
@@ -179,7 +178,7 @@ client.on("message", async msg => {
                 })
         }
         let steparray = ['BRANDON HAS A MANGINA', 'IM GONNA ROLL YOU INTO A LITTLE BALL AND PUT YOU UP MY VAGINA']
-        if (message === "stepbro") {
+        if ((message === "stepbro") || (message === "step bro")) {
             const ranpin = Math.floor(Math.random() * steparray.length);
             msg.channel.send(steparray[ranpin])
         }
@@ -270,16 +269,12 @@ client.on("message", async msg => {
     }
 })
 client.on("guildMemberAdd", async (newmem) => {
-    con.query(`INSERT INTO dailytimer (id, lastclaimed) VALUES ("${author.id}", 'Unclaimed')`)
-    con.query(`INSERT INTO robtimer (id, lastused) VALUES ("${author.id}", 'Unused')`)
-    con.query(`INSERT INTO deposittimer (id, lastused) VALUES ("${author.id}", 'Unused')`)
-    con.query(`INSERT INTO withdrawtimer (id, lastused) VALUES ("${author.id}", 'Unused')`)
-    con.query(`INSERT INTO rolltimer (id, lastused, uses) VALUES ("${author.id}", 'Unused', 0)`)
     const bruh = new Date(Date.now())
     const genchan = client.channels.cache.get("722982530470379550");
     const nutchan = client.channels.cache.get("715925099307335680");
     const welchan = client.channels.cache.get("464172724181270549");
-    if (newmem.guild.name != "Big Nut") return;
+    console.log(newmem.guild.id)
+    if (newmem.guild.id !== big_nut) return;
     if (newmem.user.bot) {
         newmem.roles.add("Bots")
         let newbotmsg = new Discord.MessageEmbed()
@@ -287,12 +282,13 @@ client.on("guildMemberAdd", async (newmem) => {
             .setAuthor(newmem.user.tag, newmem.user.avatarURL())
             .setThumbnail("https://i.pinimg.com/originals/f6/30/fb/f630fbf31454641d95317c9862d38a9d.gif")
             .setColor(pink)
+            .setTimestamp();
         let newbotlog = new Discord.MessageEmbed()
             .setTitle("A new bot has been added")
             .setAuthor(newmem.user.tag, newmem.user.avatarURL())
             .setColor(pink)
             .setThumbnail("https://media3.giphy.com/media/EOHqVt2BTTvCU/source.gif")
-            .setFooter(`${bruh.toDateString()} at ${bruh.toLocaleTimeString()}`)
+            .setTimestamp();
         genchan.send(newbotmsg)
         welchan.send(newbotlog)
     } if (!newmem.user.bot) {
@@ -312,12 +308,13 @@ client.on("guildMemberAdd", async (newmem) => {
                 .setTitle(`${newmem.user.username} has joined the server`)
                 .setThumbnail("https://media3.giphy.com/media/EOHqVt2BTTvCU/source.gif")
                 .setColor(pink)
-                .setFooter(`${bruh.toDateString()} at ${bruh.toLocaleTimeString()}`)
+                .setTimestamp();
             let welcomemsg = new Discord.MessageEmbed()
                 .setAuthor(newmem.user.tag, newmem.user.avatarURL())
                 .setDescription(`-Read the rules in ${client.channels.cache.get('463806957875363841')}\n-Use ${prefix}help for assistance with any bots\n-Contact an admin if you're having problems`)
                 .setThumbnail("https://i.pinimg.com/originals/f6/30/fb/f630fbf31454641d95317c9862d38a9d.gif")
                 .setColor(pink)
+                .setTimestamp();
             welchan.send(welcomelog)
             genchan.send(welcomemsg)
             return;
@@ -336,12 +333,13 @@ client.on("guildMemberAdd", async (newmem) => {
                     .setThumbnail("https://media3.giphy.com/media/EOHqVt2BTTvCU/source.gif")
                     .setDescription(`Invite code: ${finalinv.code}\nCreator: ${finalinv.inviter.username}\nUses: ${finalinv.uses}`)
                     .setColor(pink)
-                    .setFooter(`${bruh.toDateString()} at ${bruh.toLocaleTimeString()}`)
+                    .setTimestamp();
                 let welcomemsg = new Discord.MessageEmbed()
                     .setAuthor(newmem.user.tag, newmem.user.avatarURL())
                     .setDescription(`-Read the rules in ${client.channels.cache.get('463806957875363841')}\n-Use ${prefix}help for assistance with any bots\n-Contact an admin if you're having problems`)
                     .setThumbnail("https://i.pinimg.com/originals/f6/30/fb/f630fbf31454641d95317c9862d38a9d.gif")
                     .setColor(pink)
+                    .setTimestamp();
                 welchan.send(welcomelog)
                 genchan.send(`Welcome to Big Nut, <@${newmem.id}>`);
                 genchan.send(welcomemsg);
@@ -373,16 +371,16 @@ client.on("guildMemberRemove", (leavemem) => {
     const nutchan = client.channels.cache.get("715925099307335680");
     const welchan = client.channels.cache.get("464172724181270549");
     const server = client.guilds.cache.get("463777968146219008")
-    if (leavemem.guild.name != "Big Nut") return;
+    console.log(leavemem.guild.id)
+    if (leavemem.guild.id != big_nut) return;
     try {
         let memberbanned = server.fetchBan(leavemem.user).catch((err) => {
             let leavemsg = new Discord.MessageEmbed()
                 .setAuthor(leavemem.user.tag, leavemem.user.avatarURL())
                 .setTitle(`**${leavemem.user.username}** left the server`)
-                .setDescription(`${bruh.toDateString()} at ${bruh.toLocaleTimeString()}`)
                 .setThumbnail("https://data.whicdn.com/images/205213419/superthumb.jpg?t=1445706119")
-                .setFooter("You made her cry :(")
                 .setColor(pink)
+                .setTimestamp();
             welchan.send(leavemsg);
             nutchan.send(`Left: ${leavemem.user.tag}\n${bruh.toDateString()}\n${bruh.toLocaleTimeString()}`)
         })
@@ -392,18 +390,17 @@ client.on("guildMemberRemove", (leavemem) => {
         let leavemsg = new Discord.MessageEmbed()
             .setAuthor(leavemem.user.tag, leavemem.user.avatarURL())
             .setTitle(`**${leavemem.user.username}** left the server`)
-            .setDescription(`${bruh.toDateString()} at ${bruh.toLocaleTimeString()}`)
             .setThumbnail("https://data.whicdn.com/images/205213419/superthumb.jpg?t=1445706119")
             .setFooter("Mans got banned")
             .setColor(pink)
+            .setTimestamp();
         welchan.send(leavemsg);
         nutchan.send(`Banned: ${leavemem.user.tag}\n${bruh.toDateString()}\n${bruh.toLocaleTimeString()}`)
     }
 });
 client.on("messageDelete", async oldmsg => {
-    const bruh = new Date(Date.now())
     if (oldmsg.author.bot == true) return;
-    if (oldmsg.guild.name != "Big Nut") return;
+    if (oldmsg.guild.id != big_nut) return;
     if (oldmsg.channel.id === "597962790220595210") return;
     const logchan = client.channels.cache.get("597962790220595210");
     const nutchan = client.channels.cache.get("715925099307335680");
@@ -454,11 +451,12 @@ client.on("guildBanAdd", (guild, banmem) => {
     const bruh = new Date(Date.now())
     const logchan = client.channels.cache.get("597962790220595210");
     const nutchan = client.channels.cache.get("715925099307335680");
+    if (guild.id != "463777968146219008") return;
     let banEmbed = new Discord.MessageEmbed()      //Sends a fancy display of execution information
         .setTitle(`**${banmem.username}** was banned`)
-        .setDescription(`${bruh.toDateString()} at ${bruh.toLocaleTimeString()}`)
         .setAuthor(banmem.username, banmem.avatarURL())
         .setThumbnail("https://media2.giphy.com/media/WXgtdvFFbAYIU/source.gif")
+        .setTimestamp()
         .setColor(pink)
     logchan.send(banEmbed);
     nutchan.send(`Banned: ${banmem.tag}\n${bruh.toDateString()}\n${bruh.toLocaleTimeString()}`)
@@ -467,12 +465,13 @@ client.on("guildBanRemove", (guild, unbanmem) => {
     const bruh = new Date(Date.now())
     const logchan = client.channels.cache.get("597962790220595210");
     const nutchan = client.channels.cache.get("715925099307335680");
+    if (guild.id != "463777968146219008") return;
     let banEmbed = new Discord.MessageEmbed()      //Sends a fancy display of execution information
         .setTitle(`**${unbanmem.username}** was unbanned`)
-        .setDescription(`${bruh.toDateString()} at ${bruh.toLocaleTimeString()}`)
         .setAuthor(unbanmem.username, unbanmem.avatarURL())
         .setThumbnail("http://38.media.tumblr.com/d9d99d3b8904a38f8108c7eecec1b766/tumblr_ncvx9wgMLi1se015qo1_500.gif")
         .setColor(pink)
+        .setTimestamp()
     logchan.send(banEmbed);
     nutchan.send(`Unbanned: ${unbanmem.tag}\n${bruh.toDateString()}\n${bruh.toLocaleTimeString()}`)
 });

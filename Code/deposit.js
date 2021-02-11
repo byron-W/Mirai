@@ -21,9 +21,15 @@ module.exports = {
                 let currentcoins = rows[0].coins;
                 con.query(`SELECT * FROM deposittimer WHERE id = "${author.id}"`, (err, rows) => {
                     if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev");
-                    if (rows.length < 1) con.query(`INSERT INTO deposittimer (id, lastused) VALUES ("${author.id}", 'Unused')`)
+                    var used;
+                    if (rows.length < 1) {
+                        con.query(`INSERT INTO deposittimer (id, lastused) VALUES ("${author.id}", 'Unused')`)
+                        used = 'Unused';
+                    } else {
+                        used = rows[0].lastused;
+                    }
                     try {
-                        if (rows[0].lastused != moment().format('k')) {
+                        if (used != moment().format('k')) {
                             if (deposithalf) {
                                 let finalamt = currentcoins / 2;
                                 con.query(`UPDATE coins SET coins = ${finalamt} WHERE id = "${author.id}"`)
@@ -70,7 +76,7 @@ module.exports = {
                             return msg.channel.send(`You've gotta wait ${moment().endOf('hour').fromNow(true)} till you can deposit again`)
                         }
                     } catch (err) {
-                        return catchErr(err, msg, `${module.exports.name}.js`, "Say something first to get coins")
+                        return catchErr(err, msg, `${module.exports.name}.js`, "Dev")
                     }
                 });
             })

@@ -13,11 +13,16 @@ module.exports = {
             let author = msg.author;
             con.query(`SELECT lastclaimed FROM dailytimer WHERE id = "${author.id}"`, (err, rows) => {
                 if (err) return catchErr(err, msg, `${module.exports.name}.js`, "Dev");
-                if (rows.length < 1) con.query(`INSERT INTO dailytimer (id, lastclaimed) VALUES ("${author.id}", 'Unclaimed')`)
+                var coins;
+                if (rows.length < 1) {
+                    con.query(`INSERT INTO dailytimer (id, lastclaimed) VALUES ("${author.id}", 'Unclaimed')`)
+                    coins = 0;
+                } else {
+                    coins = rows[0].coins
+                }
                 try {
                     if (rows[0].lastclaimed != moment().format(`L`)) {
                         con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
-                            let coins = rows[0].coins
                             let dailyamt = 5000;
                             let finalcoins = coins + dailyamt;
                             con.query(`UPDATE coins SET coins = ${finalcoins} WHERE id = "${author.id}"`);
