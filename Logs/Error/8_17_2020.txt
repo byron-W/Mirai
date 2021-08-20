@@ -1,0 +1,250 @@
+
+
+----------17:45:54----------
+meme.js
+TypeError
+Cannot read property 'nsfw' of undefined
+TypeError: Cannot read property 'nsfw' of undefined
+    at Object.execute (C:\Bot\Aki\Code\meme.js:22:40)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------17:52:55----------
+animeschedule.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:314:20)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:314:20)
+    at endReadableNT (_stream_readable.js:1244:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------17:53:34----------
+animeschedule.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:314:20)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:314:20)
+    at endReadableNT (_stream_readable.js:1244:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------18:34:21----------
+bigbruh.js
+Error
+input stream: Could not find player config
+Error: input stream: Could not find player config
+    at exports.getBasicInfo (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:59:13)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Object.exports.<computed> [as getBasicInfo] (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:297:18)
+    at async exports.getFullInfo (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:188:14)
+    at async Object.exports.<computed> [as getFullInfo] (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:297:18)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------18:43:53----------
+bigbruh.js
+Error
+input stream: Could not find player config
+Error: input stream: Could not find player config
+    at exports.getBasicInfo (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:59:13)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Object.exports.<computed> [as getBasicInfo] (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:297:18)
+    at async exports.getFullInfo (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:188:14)
+    at async Object.exports.<computed> [as getFullInfo] (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:297:18)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------18:45:35----------
+bigbruh.js
+Error
+input stream: Could not find player config
+Error: input stream: Could not find player config
+    at exports.getBasicInfo (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:59:13)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Object.exports.<computed> [as getBasicInfo] (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:296:18)
+    at async exports.getFullInfo (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:187:14)
+    at async Object.exports.<computed> [as getFullInfo] (C:\Bot\Aki\node_modules\ytdl-core\lib\info.js:296:18)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------19:15:23----------
+botinfo.js
+TypeError
+Cannot read property 'members' of undefined
+TypeError: Cannot read property 'members' of undefined
+    at Object.execute (C:\Bot\Aki\Code\botinfo.js:49:75)
+    at Client.<anonymous> (C:\Bot\Aki\aki.js:288:21)
+    at Client.emit (events.js:314:20)
+    at MessageCreateAction.handle (C:\Bot\Aki\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Aki\node_modules\ws\lib\event-target.js:125:16)
+    at WebSocket.emit (events.js:314:20)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:57:09----------
+mirai.js
+TypeError
+Cannot read property 'end' of null
+TypeError: Cannot read property 'end' of null
+    at Object.execute (C:\Bot\Aki\Code\stop.js:14:42)
+    at Client.<anonymous> (C:\Bot\Aki\aki.js:288:21)
+    at Client.emit (events.js:314:20)
+    at MessageCreateAction.handle (C:\Bot\Aki\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Aki\node_modules\ws\lib\event-target.js:125:16)
+    at WebSocket.emit (events.js:314:20)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:23:11----------
+botinfo.js
+TypeError
+Cannot read property 'members' of undefined
+TypeError: Cannot read property 'members' of undefined
+    at Object.execute (C:\Bot\Aki\Code\botinfo.js:49:75)
+    at Client.<anonymous> (C:\Bot\Aki\aki.js:288:21)
+    at Client.emit (events.js:314:20)
+    at MessageCreateAction.handle (C:\Bot\Aki\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Aki\node_modules\ws\lib\event-target.js:125:16)
+    at WebSocket.emit (events.js:314:20)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:38:32----------
+givecoins.js
+ReferenceError
+rows is not defined
+ReferenceError: rows is not defined
+    at Object.execute (C:\Bot\Aki\Code\givecoins.js:17:30)
+    at Client.<anonymous> (C:\Bot\Aki\aki.js:288:21)
+    at Client.emit (events.js:314:20)
+    at MessageCreateAction.handle (C:\Bot\Aki\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Aki\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Aki\node_modules\ws\lib\event-target.js:125:16)
+    at WebSocket.emit (events.js:314:20)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------22:19:21----------
+devplay.js
+TypeError
+Cannot read property 'end' of null
+TypeError: Cannot read property 'end' of null
+    at Query.<anonymous> (C:\Bot\Aki\Code\devplay.js:24:54)
+    at Query.<anonymous> (C:\Bot\Aki\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (C:\Bot\Aki\node_modules\mysql\lib\Connection.js:488:16)
+    at Query.Sequence.end (C:\Bot\Aki\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (C:\Bot\Aki\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (C:\Bot\Aki\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (C:\Bot\Aki\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Bot\Aki\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Bot\Aki\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Bot\Aki\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------22:22:23----------
+devplay.js
+TypeError
+Cannot read property 'end' of null
+TypeError: Cannot read property 'end' of null
+    at Query.<anonymous> (C:\Bot\Aki\Code\devplay.js:25:58)
+    at Query.<anonymous> (C:\Bot\Aki\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (C:\Bot\Aki\node_modules\mysql\lib\Connection.js:488:16)
+    at Query.Sequence.end (C:\Bot\Aki\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (C:\Bot\Aki\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (C:\Bot\Aki\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (C:\Bot\Aki\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Bot\Aki\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Bot\Aki\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Bot\Aki\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------22:52:25----------
+addsong.js
+SELECT * FROM opsong
+Table 'petuniabase.opsong' doesn't exist
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------23:15:33----------
+addsong.js
+SELECT * FROM opongs
+Table 'petuniabase.opongs' doesn't exist
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------23:28:36----------
+addsong.js
+INSERT INTO opsongs (songlink, songname, altname, songid, ansname, ansaltname) VALUES("tFR3RyLAsgo", "Danshi Koukousei no Nichijou", "Daily Lives of High School Boys", 264, "danshi koukousei no nichijou", "daily lives of high school boys")
+Data too long for column 'altname' at row 1
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------23:28:57----------
+addsong.js
+INSERT INTO opsongs (songlink, songname, altname, songid, ansname, ansaltname) VALUES("tFR3RyLAsgo", "Danshi Koukousei", "Daily Lives of High School Boys", 264, "danshi koukousei", "daily lives of high school boys")
+Data too long for column 'altname' at row 1
+
+#petgeneral
+@Godly_Otaku
+250072488929787924

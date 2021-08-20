@@ -1,0 +1,29 @@
+{
+  "name": "mirai",
+  "version": "3.0.0",
+  "description": "This is my discord bot. I don't really have any ideas for her main concept so she does a lot of things at the moment.",
+  "main": "mirai.js",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.4.0",
+    "moment": "^2.29.1",
+    "mysql2": "^2.3.0",
+    "opusscript": "^0.0.7",
+    "superagent": "^5.3.1",
+    "ytdl-core": "^4.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Godly_Otaku",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Mirai"
+  }
+}

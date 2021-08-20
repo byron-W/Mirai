@@ -1,0 +1,245 @@
+
+
+----------19:50:42----------
+animeseason.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:08:21----------
+animememe.js
+ReferenceError
+radomnumber is not defined
+ReferenceError: radomnumber is not defined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:34:38)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:08:42----------
+animememe.js
+ReferenceError
+radomnumber is not defined
+ReferenceError: radomnumber is not defined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:63:38)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:08:49----------
+animememe.js
+ReferenceError
+radomnumber is not defined
+ReferenceError: radomnumber is not defined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:34:38)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:09:06----------
+animememe.js
+ReferenceError
+radomnumber is not defined
+ReferenceError: radomnumber is not defined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:63:38)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:09:53----------
+animememe.js
+ReferenceError
+radomnumber is not defined
+ReferenceError: radomnumber is not defined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:63:38)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:10:05----------
+animememe.js
+ReferenceError
+radomnumber is not defined
+ReferenceError: radomnumber is not defined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:34:38)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:10:28----------
+animememe.js
+ReferenceError
+radomnumber is not defined
+ReferenceError: radomnumber is not defined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:63:38)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:10:34----------
+animememe.js
+ReferenceError
+radomnumber is not defined
+ReferenceError: radomnumber is not defined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:34:38)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:20:23----------
+animememe.js
+ReferenceError
+randomnumer is not defined
+ReferenceError: randomnumer is not defined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:29:42)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:22:18----------
+animememe.js
+ReferenceError
+randomnumer is not defined
+ReferenceError: randomnumer is not defined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:29:42)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:44:09----------
+manga.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:48:18----------
+manga.js
+Error
+Service Unavailable
+Error: Service Unavailable
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at IncomingMessage.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:49:30----------
+manga.js
+Error
+Service Unavailable
+Error: Service Unavailable
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at IncomingMessage.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:49:51----------
+manga.js, "Dev"
+TypeError
+Cannot read property 'name' of undefined
+TypeError: Cannot read property 'name' of undefined
+    at Object.execute (C:\Bot\Aki\Code\manga.js:53:74)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------20:52:13----------
+manga.js
+TypeError
+Cannot read property 'name' of undefined
+TypeError: Cannot read property 'name' of undefined
+    at Object.execute (C:\Bot\Aki\Code\manga.js:53:74)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:06:09----------
+manga.js
+Error
+Service Unavailable
+Error: Service Unavailable
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at IncomingMessage.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:19:56----------
+manga.js
+Error
+Service Unavailable
+Error: Service Unavailable
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at IncomingMessage.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924

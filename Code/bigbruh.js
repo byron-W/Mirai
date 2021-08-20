@@ -15,7 +15,7 @@ module.exports = {
         try {
             client.voice.joinChannel(VoiceChannel)     //Joins the voice chat
                 .then(connection => {
-                    const stream = ytdl("https://www.youtube.com/watch?v=4XkN3SA_q1c&ab_channel=SoundEffectsTras", { filter: format => format.container === 'mp4', quality: 'highestaudio' });
+                    const stream = ytdl("https://www.youtube.com/watch?v=qD-lqAvUJkg", { filter: format => format.container === 'mp4', quality: 'highestaudio' });
                     connection.play(stream, streamOptions)
                         .on("error", err => {
                             return catchErr(err, msg, `${module.exports.name}.js`, "Bruh Moment")

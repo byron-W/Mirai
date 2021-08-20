@@ -5,7 +5,7 @@ const fs = require("fs");
 const { token, sqlpass } = require("./token.json");
 const { prefix, pink, lavender, crimson, green, devid, big_nut } = require("./config.json");
 const moment = require("moment")
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const wait = require('util').promisify(setTimeout);
 const commandFiles = fs.readdirSync('./Code/').filter(file => file.endsWith('.js'));
 
@@ -20,7 +20,6 @@ const con = mysql.createConnection({
     user: "root",
     password: sqlpass,
     database: "petuniabase",
-    flags: '-SESSION_TRACK'
 });
 con.connect(err => {
     if (err) throw err;
@@ -60,7 +59,7 @@ function catchErr(err, message, file, sendb) {
 }
 client.on("ready", () => {
     console.log(`${client.user.username} is now online`);
-    client.user.setActivity("with your no-no zone :)", { type: "PLAYING" });     //Sets what the bot is doing
+    client.user.setActivity("you sleep", { type: "WATCHING" });     //Sets what the bot is doing
     wait(1000)
     client.guilds.cache.get('463777968146219008').fetchInvites().then(g => {
         let allinv = g.array()
@@ -88,54 +87,10 @@ client.on("ready", () => {
     //    client.guilds.cache.get('572127244655394836').setIcon(iconlist[index])
     //}, 10000); // Runs this every 10 seconds.
 });
-function generateCoins() {
-    return Math.floor(Math.random() * (100 - 10 + 1)) + 10;
-}
 client.on("message", async msg => {
     try {
         let author = msg.author;
         if (author.bot) return;     //Doesn't let the bot respond to itself
-
-        let noemoji = msg.author.username.replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '');
-        con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
-            try {
-                if (err) return msg.channel.send(`${author.username}, I cannot give you coins due to emojis or other weird characters in your username\nPlease change it to stop recieving this message and to recieve coins`)
-                if (msg.content.startsWith(prefix)) return;
-                if (rows.length < 1) {
-                    con.query(`INSERT INTO coins (id, coins, bank, total, username) VALUES ("${author.id}", ${generateCoins()}, 0, ${generateCoins()}, "${noemoji}")`)
-                } else {
-                    let coins = rows[0].coins;
-                    con.query(`UPDATE coins SET coins = ${coins + generateCoins()} WHERE id = "${author.id}"`)
-                }
-                if (rows.length > 1) {
-                    let coins = rows[0].coins;
-                    con.query(`DELETE FROM coins WHERE id = "${author.id}"`)
-                    con.query(`INSERT INTO coins (id, coins, bank, total, username) VALUES ("${author.id}", ${coins}, 0, ${coins}, "${noemoji}")`)
-                }
-            } catch {
-                return msg.reply(`I cannot give you coins due to emojis or other weird characters in your username\nPlease change it to stop recieving this message and to recieve coins`)
-            }
-        });
-        con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
-            try {
-                con.query(`SELECT * FROM coins WHERE id = "${author.id}"`, (err, rows) => {
-                    let wallet = rows[0].coins;
-                    let bank = rows[0].bank;
-                    let newtotal = wallet + bank;
-                    con.query(`UPDATE coins SET total = ${newtotal} WHERE id = "${author.id}"`)
-                });
-            }
-            catch {
-                console.log(`${author.username} ; ${author.id}`)
-            }
-        });
-        setInterval(() => {
-            con.query(`UPDATE dailytimer SET lastclaimed = 'Unclaimed'`)
-            con.query(`UPDATE robtimer SET lastused = 'Unused'`)
-            con.query(`UPDATE deposittimer SET lastused = 'Unused'`)
-            con.query(`UPDATE withdrawtimer SET lastused = 'Unused'`)
-            con.query(`UPDATE rolltimer SET uses = 0`)
-        }, 3600000)
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);      //Takes away the prefix and command to make the array 0 based. Equals everything after
         const commandName = args.shift().toLowerCase();     //The string directly after the prefix. No space allowed
         const linkargs = msg.content.slice(prefix.length + commandName.length).trim().split(" | ");
@@ -273,7 +228,6 @@ client.on("guildMemberAdd", async (newmem) => {
     const genchan = client.channels.cache.get("722982530470379550");
     const nutchan = client.channels.cache.get("715925099307335680");
     const welchan = client.channels.cache.get("464172724181270549");
-    console.log(newmem.guild.id)
     if (newmem.guild.id !== big_nut) return;
     if (newmem.user.bot) {
         newmem.roles.add("Bots")
@@ -371,7 +325,6 @@ client.on("guildMemberRemove", (leavemem) => {
     const nutchan = client.channels.cache.get("715925099307335680");
     const welchan = client.channels.cache.get("464172724181270549");
     const server = client.guilds.cache.get("463777968146219008")
-    console.log(leavemem.guild.id)
     if (leavemem.guild.id != big_nut) return;
     try {
         let memberbanned = server.fetchBan(leavemem.user).catch((err) => {
@@ -404,7 +357,6 @@ client.on("messageDelete", async oldmsg => {
     if (oldmsg.channel.id === "597962790220595210") return;
     const logchan = client.channels.cache.get("597962790220595210");
     const nutchan = client.channels.cache.get("715925099307335680");
-
     if (oldmsg.attachments.size > 0) {
         let oldimg = '';
         oldmsg.attachments.forEach((row) => {
@@ -499,10 +451,4 @@ client.on("inviteDelete", inv => {
     })
 
 })
-client.on("debug", deb => {
-    const bruh = new Date(Date.now())
-    fs.appendFile(`./Logs/Debug/${bruh.getMonth() + 1}_${bruh.getDate()}_${bruh.getFullYear()}--Debug.txt`, `\n\n----------${bruh.toTimeString().slice(0, 8)}----------\n${deb}`, (err) => {
-        if (err) throw err;
-    });
-})
-client.login(token);        //Token for the bot to use this file
+client.login(token);        //Token for the bot to use this filefilefile

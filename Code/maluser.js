@@ -22,7 +22,6 @@ module.exports = {
             try {
                 let aembed = new Discord.MessageEmbed()      //Sends a fancy display of execution information
                     .setTitle(body.username)
-                    .setDescription(body.about)
                     .setColor(blue)
                     .setURL(body.url)
                     .setThumbnail(body.image_url)
@@ -42,7 +41,7 @@ module.exports = {
                 gen.delete();
             } catch (err) {
                 gen.delete();
-                return catchErr(err, msg, `${module.exports.name}.js`, `Their description is too long\nHere's the link to their account: ${body.url}`)
+                return catchErr(err, msg, `${module.exports.name}.js`, `User doesn't exist`)
             }
         } catch (err) {
             return catchErr(err, msg, `${module.exports.name}.js`, "Dev")

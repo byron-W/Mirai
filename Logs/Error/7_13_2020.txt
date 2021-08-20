@@ -1,0 +1,612 @@
+
+
+----------01:13:31----------
+animeseason.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:13:31----------
+animeseason.js
+TypeError
+Cannot read property 'anime' of undefined
+TypeError: Cannot read property 'anime' of undefined
+    at Object.execute (C:\Bot\Aki\Code\animeseason.js:28:38)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:15:31----------
+animeschedule.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:15:31----------
+animeschedule.js
+TypeError
+Cannot read property 'image_url' of undefined
+TypeError: Cannot read property 'image_url' of undefined
+    at generateEmbed (C:\Bot\Aki\Code\animeschedule.js:63:54)
+    at Object.execute (C:\Bot\Aki\Code\animeschedule.js:74:38)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:17:16----------
+animeschedule.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:17:16----------
+animeschedule.js
+TypeError
+Cannot destructure property `body` of 'undefined' or 'null'.
+TypeError: Cannot destructure property `body` of 'undefined' or 'null'.
+    at Object.execute (C:\Bot\Aki\Code\animeschedule.js:18:17)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:19:40----------
+animeschedule.js
+TypeError
+Cannot destructure property `body` of 'undefined' or 'null'.
+TypeError: Cannot destructure property `body` of 'undefined' or 'null'.
+    at Object.execute (C:\Bot\Aki\Code\animeschedule.js:18:17)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:20:26----------
+animeschedule.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:20:26----------
+animeschedule.js
+TypeError
+Cannot destructure property `body` of 'undefined' or 'null'.
+TypeError: Cannot destructure property `body` of 'undefined' or 'null'.
+    at Object.execute (C:\Bot\Aki\Code\animeschedule.js:18:17)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:21:05----------
+animeschedule.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:21:05----------
+animeschedule.js
+TypeError
+Cannot destructure property `body` of 'undefined' or 'null'.
+TypeError: Cannot destructure property `body` of 'undefined' or 'null'.
+    at Object.execute (C:\Bot\Aki\Code\animeschedule.js:18:17)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:21:59----------
+animeschedule.js
+TypeError
+Cannot destructure property `body` of 'undefined' or 'null'.
+TypeError: Cannot destructure property `body` of 'undefined' or 'null'.
+    at Object.execute (C:\Bot\Aki\Code\animeschedule.js:18:17)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:44:25----------
+animeschedule.js
+TypeError
+Cannot destructure property `body` of 'undefined' or 'null'.
+TypeError: Cannot destructure property `body` of 'undefined' or 'null'.
+    at Object.execute (C:\Bot\Aki\Code\animeschedule.js:18:17)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:48:54----------
+animeschedule.js3
+TypeError
+Cannot destructure property `body` of 'undefined' or 'null'.
+TypeError: Cannot destructure property `body` of 'undefined' or 'null'.
+    at Object.execute (C:\Bot\Aki\Code\animeschedule.js:18:17)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:51:21----------
+animeschedule.js
+Error
+Service Unavailable
+Error: Service Unavailable
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at IncomingMessage.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:51:39----------
+animeschedule.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:53:59----------
+animeschedule.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:54:39----------
+animeschedule.js2
+TypeError
+embed.setDesciption is not a function
+TypeError: embed.setDesciption is not a function
+    at generateEmbed (C:\Bot\Aki\Code\animeschedule.js:69:27)
+    at Object.execute (C:\Bot\Aki\Code\animeschedule.js:74:34)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:57:43----------
+animeschedule.js2
+TypeError
+embed.setDesciption is not a function
+TypeError: embed.setDesciption is not a function
+    at generateEmbed (C:\Bot\Aki\Code\animeschedule.js:69:27)
+    at Object.execute (C:\Bot\Aki\Code\animeschedule.js:74:34)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------01:59:26----------
+animeschedule.js2
+TypeError
+embed.setDesciption is not a function
+TypeError: embed.setDesciption is not a function
+    at generateEmbed (C:\Bot\Aki\Code\animeschedule.js:69:27)
+    at Object.execute (C:\Bot\Aki\Code\animeschedule.js:74:34)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:10:17----------
+animeseason.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:10:17----------
+animeseason.js2
+TypeError
+Cannot read property 'anime' of undefined
+TypeError: Cannot read property 'anime' of undefined
+    at Object.execute (C:\Bot\Aki\Code\animeseason.js:28:38)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:11:08----------
+animeseason.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:11:08----------
+animeseason.js2
+TypeError
+Cannot read property 'anime' of undefined
+TypeError: Cannot read property 'anime' of undefined
+    at Object.execute (C:\Bot\Aki\Code\animeseason.js:27:34)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:12:14----------
+animeseason.js
+Error
+Service Unavailable
+Error: Service Unavailable
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at IncomingMessage.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:13:10----------
+animeseason.js
+Error
+Bad Request
+Error: Bad Request
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:20:24----------
+animememe.js
+TypeError
+Cannot read property 'nsfw' of undefined
+TypeError: Cannot read property 'nsfw' of undefined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:25:44)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:25:04----------
+animememe.js
+TypeError
+Cannot read property 'nsfw' of undefined
+TypeError: Cannot read property 'nsfw' of undefined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:25:44)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:25:46----------
+animememe.js
+TypeError
+Cannot read property 'nsfw' of undefined
+TypeError: Cannot read property 'nsfw' of undefined
+    at Object.execute (C:\Bot\Aki\Code\animememe.js:25:44)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:29:02----------
+meme.js
+TypeError
+Cannot read property 'nsfw' of undefined
+TypeError: Cannot read property 'nsfw' of undefined
+    at Object.execute (C:\Bot\Aki\Code\meme.js:22:40)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:29:44----------
+meme.js
+TypeError
+Cannot read property 'nsfw' of undefined
+TypeError: Cannot read property 'nsfw' of undefined
+    at Object.execute (C:\Bot\Aki\Code\meme.js:22:40)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:36:33----------
+meme.js
+TypeError
+Cannot read property 'nsfw' of undefined
+TypeError: Cannot read property 'nsfw' of undefined
+    at Object.execute (C:\Bot\Aki\Code\meme.js:22:40)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:37:30----------
+meme.js
+TypeError
+Cannot read property 'nsfw' of undefined
+TypeError: Cannot read property 'nsfw' of undefined
+    at Object.execute (C:\Bot\Aki\Code\meme.js:22:40)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:40:48----------
+manga.js
+TypeError
+Cannot read property 'mal_id' of undefined
+TypeError: Cannot read property 'mal_id' of undefined
+    at getmanga (C:\Bot\Aki\Code\manga.js:25:40)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+    at async Object.execute (C:\Bot\Aki\Code\manga.js:27:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:40:49----------
+manga.js
+Error
+Not Found
+Error: Not Found
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:40:49----------
+manga.js
+TypeError
+Cannot destructure property `body` of 'undefined' or 'null'.
+TypeError: Cannot destructure property `body` of 'undefined' or 'null'.
+    at Object.execute (C:\Bot\Aki\Code\manga.js:32:17)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:45:37----------
+manga.js
+Error
+Not Found
+Error: Not Found
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:45:37----------
+manga.js
+TypeError
+Cannot destructure property `body` of 'undefined' or 'null'.
+TypeError: Cannot destructure property `body` of 'undefined' or 'null'.
+    at Object.execute (C:\Bot\Aki\Code\manga.js:31:17)
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:49:31----------
+manga.js
+Error
+Not Found
+Error: Not Found
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:52:18----------
+manga.js
+Error
+Not Found
+Error: Not Found
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------02:53:22----------
+manga.js
+Error
+Not Found
+Error: Not Found
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at Stream.emit (events.js:200:13)
+    at Unzip.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\unzip.js:53:12)
+    at Unzip.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------03:00:48----------
+manga.js
+Error
+Service Unavailable
+Error: Service Unavailable
+    at Request.callback (C:\Bot\Aki\node_modules\superagent\lib\node\index.js:871:15)
+    at C:\Bot\Aki\node_modules\superagent\lib\node\index.js:1114:20
+    at IncomingMessage.<anonymous> (C:\Bot\Aki\node_modules\superagent\lib\node\parsers\json.js:22:7)
+    at IncomingMessage.emit (events.js:205:15)
+    at endReadableNT (_stream_readable.js:1154:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924

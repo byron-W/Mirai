@@ -1,5 +1,5 @@
 ﻿const { MessageAttachment } = require("discord.js");
-
+const fs = require("fs")
 module.exports = {
     name: 'errorlog',
     description: 'Get error logs',
@@ -7,23 +7,22 @@ module.exports = {
     cooldown: 10,
     class: 'devcmd',
     args: false,
-    execute(msg, args, con, linkargs, client, catchErr) {
+    execute(msg, args) {
         const bruh = new Date(Date.now())
         if (!args[0]) {
-            try {
-                let data = new MessageAttachment(`./Logs/Error/${bruh.getMonth() + 1}_${bruh.getDate()}_${bruh.getFullYear()}.txt`);
-                msg.reply("Today's error log", data);
-            } catch (err) {
-                return catchErr(err, msg, `${module.exports.name}.js`, "There isn't an error log for today");
+            const PATH = `./Logs/Error/${bruh.getMonth() + 1}_${bruh.getDate()}_${bruh.getFullYear()}.txt`
+            if (!fs.existsSync(PATH)) {
+                return msg.channel.send("There isn't an error log for today");
             }
+            let data = new MessageAttachment(PATH);
+            msg.reply("Today's error log", data);
         } else {
-            try {
-                let path = args[0];
-                let data = new MessageAttachment(`./Logs/Error/${path}.txt`);
-                msg.reply(`${path}'s error log`, data);
-            } catch (err) {
-                return catchErr(err, msg, `${module.exports.name}.js`, "There isn't an error logs for that day");
+            const PATH = `./Logs/Error/${args[0]}.txt`
+            if (!fs.existsSync(PATH)) {
+                return msg.channel.send("There isn't an error log for that day");
             }
+            let data = new MessageAttachment(PATH);
+            msg.reply(`${args[0]}'s error log`, data);
         }
     },
 }

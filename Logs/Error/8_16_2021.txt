@@ -1,0 +1,361 @@
+
+
+----------21:00:04----------
+mirai.js
+TypeError
+Cannot read property 'fetch' of undefined
+TypeError: Cannot read property 'fetch' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:14:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:219:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:00:15----------
+mirai.js
+TypeError
+Cannot read property 'fetch' of undefined
+TypeError: Cannot read property 'fetch' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:14:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:219:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:03:18----------
+mirai.js
+TypeError
+Cannot read property 'fetch' of undefined
+TypeError: Cannot read property 'fetch' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:36:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:04:07----------
+mirai.js
+TypeError
+Cannot read property 'fetch' of undefined
+TypeError: Cannot read property 'fetch' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:36:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:04:21----------
+mirai.js
+TypeError
+Cannot read property 'fetch' of undefined
+TypeError: Cannot read property 'fetch' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:36:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:06:10----------
+mirai.js
+TypeError
+Cannot read property 'fetch' of undefined
+TypeError: Cannot read property 'fetch' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:36:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:06:26----------
+mirai.js
+TypeError
+Cannot read property 'fetch' of undefined
+TypeError: Cannot read property 'fetch' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:36:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:13:43----------
+mirai.js
+TypeError
+Cannot read property 'fetch' of undefined
+TypeError: Cannot read property 'fetch' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:36:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:16:48----------
+mirai.js
+TypeError
+Cannot read property 'cache' of undefined
+TypeError: Cannot read property 'cache' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:36:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:28:51----------
+mirai.js
+TypeError
+Cannot read property 'cache' of undefined
+TypeError: Cannot read property 'cache' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:37:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:30:55----------
+mirai.js
+TypeError
+Cannot read property 'cache' of undefined
+TypeError: Cannot read property 'cache' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:37:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:39:07----------
+mirai.js
+TypeError
+Cannot read property 'cache' of undefined
+TypeError: Cannot read property 'cache' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:37:37)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------21:56:56----------
+mirai.js
+TypeError
+Cannot read property 'highest' of undefined
+TypeError: Cannot read property 'highest' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:38:40)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------22:00:01----------
+mirai.js
+TypeError
+Cannot read property 'roles' of undefined
+TypeError: Cannot read property 'roles' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:37:35)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------22:17:39----------
+mirai.js
+TypeError
+Cannot read property 'highest' of undefined
+TypeError: Cannot read property 'highest' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:37:35)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------22:24:15----------
+mirai.js
+TypeError
+Cannot read property 'id' of undefined
+TypeError: Cannot read property 'id' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:37:34)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------22:29:41----------
+mirai.js
+TypeError
+Cannot read property 'id' of undefined
+TypeError: Cannot read property 'id' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:37:34)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
+
+----------22:35:40----------
+mirai.js
+TypeError
+Cannot read property 'id' of undefined
+TypeError: Cannot read property 'id' of undefined
+    at Object.execute (C:\Bot\Mirai\Code\avatar.js:37:58)
+    at Client.<anonymous> (C:\Bot\Mirai\mirai.js:218:21)
+    at Client.emit (node:events:394:28)
+    at MessageCreateAction.handle (C:\Bot\Mirai\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketManager.js:384:31)
+    at WebSocketShard.onPacket (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:444:22)
+    at WebSocketShard.onMessage (C:\Bot\Mirai\node_modules\discord.js\src\client\websocket\WebSocketShard.js:301:10)
+    at WebSocket.onMessage (C:\Bot\Mirai\node_modules\ws\lib\event-target.js:132:16)
+    at WebSocket.emit (node:events:394:28)
+
+#petgeneral
+@Godly_Otaku
+250072488929787924
