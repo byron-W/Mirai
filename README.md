@@ -1,8 +1,8 @@
-# Petunia
+# Mirai
 This is my discord bot.
-I don't really have any ideas for her main concept so she does a lot of things at the moment.
+Final version is version 3.0.0
+Used to have an economy and waifu rolling system but I didn't feel like constantly updating so those are gone
 
-I would appreciate if someone were to give suggestions on a concept for her.
 My discord is: Godly_Otaku#6676
 
 Feel free to look at her source code.
