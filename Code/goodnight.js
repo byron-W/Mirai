@@ -7,6 +7,6 @@ module.exports = {
 	class: 'fun',
 	args: false,
 	execute(msg) {
-		if (author.id === devid) return msg.channel.send(`*goodnight* :heart: :sleeping:`, { files: ["./reactions/sleeping.gif"] });
+		if (msg.author.id === '250072488929787924') return msg.channel.send(`*goodnight* :heart: :sleeping:`, { files: ["../Mirai/Reactions/sleeping.gif"] });
 	},
 }

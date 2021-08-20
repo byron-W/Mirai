@@ -7,6 +7,6 @@ module.exports = {
 	class: 'fun',
 	args: false,
 	execute(msg) {
-		msg.channel.send(`:potato:`, { files: ["../reactions/potato.jpg"] });
+		msg.channel.send(`:potato:`, { files: ["../Mirai/Reactions/potato.jpg"] });
 	},
 }
